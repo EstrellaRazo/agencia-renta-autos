@@ -1,0 +1,161 @@
+body{
+    background-color:whitesmoke;
+    color: #2e1f0c;
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header{
+    background-color: #FFEFF9;
+    padding: 20px 0;
+}
+
+nav{
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+nav li{
+    display: inline;
+    margin-left: 15px;
+    color: #2e1f0c;
+}
+
+nav a{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: white;
+}
+
+/*CSS para home */
+.titulo-barberia{
+    text-align: center;
+    text-decoration: double;
+    font-size: xxx-large;
+    margin: 20px;
+}
+
+.banner{
+    width: 30%;
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.titulo-principal{
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left;
+}
+
+.bienvenida{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.principal{
+    background: whitesmoke;
+    padding: 3em 0;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.principal p{
+    margin: 0 0 1em;
+}
+
+.principal strong{
+    font-weight: bold;
+}
+
+.principal em{
+    font-style: italic;
+}
+
+.utensilios{
+    width: 140px;
+    float: left;
+    margin: 0 15px;
+}
+
+.mapa{
+    padding: 3em;
+    background: linear-gradient(whitesmoke, #EFC3B8);
+}
+
+.mapa p{
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.mapa-contenido{
+    width: 940px;
+    margin: 0 auto;
+}
+
+
+.contenido{
+    padding: 3em 0;
+    background: linear-gradient(#EFC3B8, #E76849);
+}
+
+/*
+.contenido-diferenciales{
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-diferenciales{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.items{
+    line-height: 1.05;
+}
+
+.items:before{
+    content: "⭑";
+    font-size: 1.5em;
+}
+
+.items:first-child{
+    font-weight: bold;
+}
+
+.img-diferenciales{
+    width: 50%;
+    margin: 0 10px;
+    transition: 400ms;
+    box-shadow: 5px 5px 5px 2px rgb(175, 125, 17);
+}
+
+.img-diferenciales:hover{
+    opacity: 0.5;
+}*/
+
+.video{
+    margin: 1em auto;
+    text-align: center;
+    width: 560px;
+}
+
+.video .titulo-principal{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.795);
+    margin-top: 35px;
+}
+
+
+footer{
+    text-align: center;
+}
