@@ -28,7 +28,7 @@ header{
 }
 
 .navbar .nav-link {
-    color: #fff !important;
+    color: #89A9D5 !important;
 }
 
 nav{
@@ -44,7 +44,6 @@ nav li{
 }
 
 nav a{
-    text-transform: uppercase;
     font-weight: bold;
     font-size: 22px;
     text-decoration: none;
@@ -54,11 +53,21 @@ nav a:hover{
     color: white;
 }
 
+#navInicio{
+    background-color: white;
+}
+
 .titulo{
     font-size: 25px;
     text-align: center;
     padding: 10px;
     font-weight: bold;
+}
+
+.btnIngresar{
+    width: 50%;
+    display: block;
+    justify-content: center;
 }
 
 /*CSS para registro*/
