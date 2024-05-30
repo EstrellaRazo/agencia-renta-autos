@@ -8,25 +8,66 @@
         <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
         <title>Auto Aventura 🛣️</title>
         <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
 
     <body>
         <header>
             <div class="caja">
-                <h1><img src="../images/logo.png" alt="logo barbería"></h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <!--<li><a href="productos.html">Productos</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>-->
-                    </ul>
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+                    <!-- Container wrapper -->
+                    <div class="container-fluid">
+                
+                    <!-- Collapsible wrapper -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Navbar brand -->
+                        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                        <img
+                            src="../images/logo.png"
+                            height="120"
+                            alt="Auto Aventura Logo"
+                            loading="lazy"
+                        />
+                        </a>
+                        <!-- Links de la izquierda -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Renta un auto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Acerca de nosotros</a>
+                        </li>
+                        </ul>
+                        <!-- fin de links izquierda -->
+                    </div>
+                    <!-- Collapsible wrapper -->
+                    <!-- Botones de la derecha -->
+                    <div class="d-flex align-items-center">
+                        <div class="paginas">
+                        <ul>
+                            <a href="inicio-sesion.html" data-mdb-ripple-init type="button" class="btn btn-outline-success me-2">
+                                Iniciar sesión
+                            </a>
+                            <a href="registrarse.html" data-mdb-ripple-init type="button" class="btn btn-primary me-3">
+                                Registrarse
+                            </a>
+                        </ul>
+                        </div>
+                    </div>
+                    <!-- Right elements -->
+                    </div>
+                    <!-- Container wrapper -->
                 </nav>
+                <!-- Navbar -->
             </div>
         </header>
-        <h1 class="titulo-auto">Auto Aventura</h1>
-        <img class="banner" src="../images/principal.jpg" alt="agencia">
-
         <main>
+            <h1 class="titulo-auto">Auto Aventura</h1>
+            <img class="banner" src="../images/principal.jpg" alt="agencia">
             <section class="principal">
                 <h2 class="titulo-principal">!Bienvenid@ a Auto Aventura!</h2>
                 <p class="bienvenida">
