@@ -1,5 +1,5 @@
 <?php
-  	require_once '../backend/models/User.php';
+  	require_once '../backend/models/UserModel.php';
 	require_once '../backend/db/Database.php';
 	require_once '../backend/interfaces/UserInterface.php';
 
@@ -14,37 +14,38 @@
 			$nombre = $usuario->getNombre();
 			$apaterno = $usuario->getApaterno();
 			$amaterno = $usuario->getAmaterno();
-			$direccion = $usuario->getDireccion();
+			$fechaNacimiento = $usuario->getFechaNacimiento();
 			$telefono = $usuario->getTelefono();
-			$correo = $usuario->getCorreo();
-			$username = $usuario->getUsuario();
-			$password = password_hash($usuario->getPassword(), PASSWORD_DEFAULT);
+			$email = $usuario->getEmail();
+			$contrasena = password_hash($usuario->getContrasena(), PASSWORD_DEFAULT);
 
 			$sql_insertar = "INSERT INTO usuarios (id, nombre, apaterno, amaterno,
-					direccion, telefono, correo, usuario, password) VALUES (null, 
-					'$nombre', '$apaterno', '$amaterno', '$direccion', '$telefono',
-					'$correo', '$username', '$password')";
+					fechaNacimiento, telefono, email, contrasena) VALUES (null, 
+					'$nombre', '$apaterno', '$amaterno', '$fechaNacimiento', '$telefono',
+					'$email', '$contrasena')";
 
-			if ($this->db->query($sql_insertar) === TRUE) {
+			if ($this->db->query($sql_insertar) === TRUE) { //Si se pudo insertar el usuario nuevo
 				return true;
 			} else {
 				return false;
 			}
 		}
 
-		public function login($usuario, $password) {
-			$sql_usuario = "SELECT * FROM usuarios WHERE usuario= '$usuario'";
+		public function login($email, $contrasena) {
+			$sql_usuario = "SELECT * FROM usuarios WHERE email = '$email'";
 			$result = $this->db->query($sql_usuario);
+
 			if ($result->num_rows == 1) {
-				$user = $result->fetch_assoc();
-				if (password_verify($password, $user['password'])) {
-					return $user;
+				$usuario = $result->fetch_assoc(); //Guardamos los datos del usuario en una variable
+				//Verificamos que la contraseña sea correcta
+				if (password_verify($contrasena, $usuario['contrasena'])) {
+					return $usuario;
 				}
 			}
 			return false;
 		}
 
-		public function obtenerTodosUsuarios() {
+		/*public function obtenerTodosUsuarios() {
 			$sql = "SELECT * FROM usuarios";
 			$result = $this->db->query($sql);
 			$users = array();
@@ -54,7 +55,6 @@
 					$users[] = $row;
 				}
 			}
-
 			return $users;
 		}
 
@@ -102,6 +102,6 @@
 				return $result->fetch_assoc();
 			}
 			return null;
-		}
+		}*/
 	}
 ?>
