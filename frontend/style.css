@@ -19,6 +19,10 @@ main{
     padding: 10px;
 }
 
+.navbar{
+    margin-bottom: 10px;
+}
+
 /*CSS para inicio de sesion */
 #inicio-sesion{
     background-image: url("../images/fondo-inicio.jpg");
@@ -33,12 +37,6 @@ main{
     #intro {
       margin-top: -58.59px;
     }
-}
-
-.nav-item{
-    font-size: large;
-    font-weight: bold;
-    
 }
 
 .titulo{
@@ -83,6 +81,7 @@ main{
 }
 
 /*CSS para home */
+
 .titulo-auto{
     text-align: center;
     text-decoration: double;
@@ -95,6 +94,11 @@ main{
     display: block;
     margin: auto;
     padding-bottom: 20px;
+}
+
+.nav-item{
+    font-size: large;
+    font-weight: bold;
 }
 
 .titulo-principal{
@@ -155,42 +159,6 @@ main{
     background: linear-gradient(#EFC3B8, #E76849);
 }
 
-/*
-.contenido-diferenciales{
-    width: 640px;
-    margin: 0 auto;
-}
-
-.lista-diferenciales{
-    width: 40%;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.items{
-    line-height: 1.05;
-}
-
-.items:before{
-    content: "⭑";
-    font-size: 1.5em;
-}
-
-.items:first-child{
-    font-weight: bold;
-}
-
-.img-diferenciales{
-    width: 50%;
-    margin: 0 10px;
-    transition: 400ms;
-    box-shadow: 5px 5px 5px 2px rgb(175, 125, 17);
-}
-
-.img-diferenciales:hover{
-    opacity: 0.5;
-}*/
-
 .video{
     margin: 1em auto;
     text-align: center;
@@ -207,3 +175,70 @@ main{
 footer{
     text-align: center;
 }
+
+/*CSS para autos*/
+.elige-fechas{
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.fechas-section{
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.renta{
+    padding: 10px;
+}
+
+.fecha{
+    margin: 10px;
+}
+
+.fecha-label{
+    margin: 0 0 0 10px;
+}
+
+.btn-fechas{
+    margin: 10px;
+    background-color: #E76849 !important;
+}
+
+.elige-auto{
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.section-cards{
+    padding: 0 20px 20px 20px;
+}
+
+.card{
+    border-radius: 15px;
+}
+
+.list-card{
+    margin: 2px;
+    padding: 2px;
+}
+
+.modelo{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.list-group-item{
+    border: #2e1f0c1c !important;
+}
+
+.seat{
+    margin: 0 0 0 35px;
+}
+
+.btn-elegir{
+    background-color: #89A9D5 !important;
+    border: none !important;
+    width: 250px !important;
+}
+
