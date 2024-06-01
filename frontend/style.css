@@ -211,12 +211,16 @@ footer{
 }
 
 .section-cards{
-    padding: 0 20px 20px 20px;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espacio entre las tarjetas */
 }
 
 .card{
-    border-radius: 15px;
-    display: inline-block;
+    border-radius: 30px;
+    margin: 3rem !important;
+    padding: 1rem;
 }
 
 .list-card{

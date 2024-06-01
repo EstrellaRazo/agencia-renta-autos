@@ -32,14 +32,10 @@ const pintarAutos = autos => {
         clone.querySelector('.marca').textContent = auto.marca
         clone.querySelector('.modelo').textContent = auto.modelo
         clone.querySelector('.categoria').textContent = auto.categoria
-        clone.querySelector('.asientos').textContent = auto.asientos
+        clone.querySelector('.asientos').textContent = auto.plazas
         clone.querySelector('.puertas').textContent = auto.puertas
         const trans = clone.querySelector('.transmision')
-        if (auto.transmision === 'manual') {
-            trans.textContent = 'M';
-        } else if (auto.transmision === 'automatica') {
-            trans.textContent = 'A';
-        }
+        trans.textContent = auto.transmision === 'manual' ? 'M' : 'A';
         clone.querySelector('.precio').textContent = auto.precio
 
         const btnPago = clone.querySelector('.btnPago')
