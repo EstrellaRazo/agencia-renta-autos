@@ -10,23 +10,7 @@
 				$userController->registrar();
 			} else if ($accion == 'login') {
 				$userController->login();
-			} else if ($accion == 'actualizar') {
-				$idUser = $_POST['idUpdate'];
-				$userController->obtenerUsuarioPorId($idUser);
-			} else if ($accion == 'borrar') {
-				$idUser = $_POST['id'];
-				$userController->borrarUsuario($idUser);
-			} else if ($accion == 'actualizarUsuario') {
-				$idUser = $_POST['id'];
-				$userController->actualizarUsuario($idUser);
-			}
-		break;
-		case 'GET':
-			$accion = $_GET['accion'];
-			if($accion == "todos"){
-				$id = $_GET['id'];
-				$userController->obtenerTodosUsuarios();
-			}
+			} 
 		break;
 	}
 ?>

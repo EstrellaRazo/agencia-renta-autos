@@ -216,6 +216,7 @@ footer{
 
 .card{
     border-radius: 15px;
+    display: inline-block;
 }
 
 .list-card{
