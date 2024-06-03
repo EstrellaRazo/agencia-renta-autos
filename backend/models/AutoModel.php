@@ -37,12 +37,20 @@
             return $this->marca;
         }
 
-        public function getmodelo () {
+        public function getModelo () {
             return $this->modelo;
         }
 
         public function getAnio () {
             return $this->anio;
+        }
+
+        public function getPlazas () {
+            return $this->plazas;
+        }
+
+        public function getPuertas () {
+            return $this->puertas;
         }
 
         public function getTransmision () {

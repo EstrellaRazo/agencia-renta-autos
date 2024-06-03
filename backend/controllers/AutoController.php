@@ -25,7 +25,7 @@
 			$resultado = $this->autoService->agregarAuto($autoNuevo);
 
 			if ($resultado) {
-				echo json_encode(array("success" => true, "message" => "Auto Registrado Satisfactoriamente"));
+				echo json_encode(array("success" => true, "message" => "Auto Agregado Satisfactoriamente"));
 			} else {
 				echo json_encode(array("success" => false, "message" => "Error al Registrar Auto"));
 			}

@@ -3,6 +3,8 @@ const card = document.getElementById('card').content
 
 const fragment = document.createDocumentFragment()
 
+const formAuto = document.getElementById('form-auto') || null
+
 
 //Metodos
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,35 +50,33 @@ const pintarAutos = autos => {
     sectionCards.appendChild(fragment)
 }
 
-/*const pintarUsuarios = usuarios => {
-    usuariosBody.innerHTML = ''
-    usuarios.forEach((user) => {
-        const clone = rowUsuarios.cloneNode(true)
+const mostrarModal = () => {
+    document.getElementById("modal").style.display = "block";
+}
 
-        clone.querySelectorAll('td')[0].textContent = user.id
-        clone.querySelectorAll('td')[1].textContent = user.nombre
-        clone.querySelectorAll('td')[2].textContent = user.apaterno
-        clone.querySelectorAll('td')[3].textContent = user.amaterno
-        clone.querySelectorAll('td')[4].textContent = user.direccion
-        clone.querySelectorAll('td')[5].textContent = user.telefono
-        clone.querySelectorAll('td')[6].textContent = user.correo
-        clone.querySelectorAll('td')[7].textContent = user.usuario
-        
-        clone.querySelector('.btn-danger').dataset.id = user.id
-        clone.querySelector('.btn-warning').dataset.id = user.id
+const cerrarModal = () => {
+    document.getElementById("modal").style.display = "none";
+}
 
-        const btnBorrar = clone.querySelector('.btn-danger')
-        btnBorrar.addEventListener('click', () => {
-            console.log('@@ btnBorrar => ', btnBorrar.dataset.id)
-            borrarUsuario(btnBorrar.dataset.id)
-        })
-        
-        const btnActualizar = clone.querySelector('.btn-warning')
-        btnActualizar.addEventListener('click', () => {
-            window.location.href = `../frontend/actualizar.html?id=${btnActualizar.dataset.id}`
-        })
-
-        fragment.appendChild(clone)
+if (formAuto) {
+    formAuto.addEventListener('submit', (event) => {
+      console.log('@@@ submit')
+      event.preventDefault()
+      const form = new FormData(formAuto)
+  
+      fetch('../backend/autos.php', {
+        method: 'POST',
+        body: form
+      })
+      .then((response) => response.json())
+      .then((res) => {
+        console.log('@@ res => ', res)
+        if (res.message === 'Auto Agregado Satisfactoriamente') {
+          window.location.href = '../frontend/autos.html'
+        }
+      })
+      .catch((err) => {
+        console.log('@@ err => ', err)
+      })
     })
-    usuariosBody.appendChild(fragment)
-}*/
+  }

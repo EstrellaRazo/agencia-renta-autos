@@ -46,4 +46,4 @@ if (registrarForm) {
         console.log('@@ err => ', err)
       })
     })
-  }
+}
