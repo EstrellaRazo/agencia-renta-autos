@@ -40,14 +40,35 @@ const pintarAutos = autos => {
         trans.textContent = auto.transmision === 'manual' ? 'M' : 'A';
         clone.querySelector('.precio').textContent = auto.precio
 
-        const btnPago = clone.querySelector('.btnPago')
-        btnPago.addEventListener('click', () => {
-            window.location.href = `../frontend/pagar.html?id=${btnPago.dataset.id}`
+        clone.querySelector('.btn-elegir').dataset.id = auto.id
+
+        const btnElegir = clone.querySelector('.btn-elegir')
+        btnElegir.addEventListener('click', () => {
+            console.log('@@ btnElegir => ', btnElegir.dataset.id)
+            obtenerAutoPorId(btnElegir.dataset.id)
         })
 
         fragment.appendChild(clone)
     })
     sectionCards.appendChild(fragment)
+}
+
+const obtenerAutoPorId = id => {
+    fetch('../backend/autos.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `id=${id}&accion=obtener`
+    })
+
+    .then((res) => res.json())
+    .then((res) => {
+        console.log('@@@ res => ', res)
+    })
+    .catch((err) => {
+        console.log('@@@ err => ', err)
+    })
 }
 
 const mostrarModal = () => {
@@ -79,4 +100,6 @@ if (formAuto) {
         console.log('@@ err => ', err)
       })
     })
-  }
+}
+
+

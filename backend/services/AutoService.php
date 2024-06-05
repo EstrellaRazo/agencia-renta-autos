@@ -44,6 +44,22 @@
 
 			return $autos;
 		}
+
+        public function obtenerAutoPorId($id) {
+			$sql = "SELECT * FROM autos WHERE id='$id'";
+			$result = $this->db->query($sql);
+
+			if ($result->num_rows == 1) {
+				$auto = $result->fetch_assoc();
+                $autoJson = json_encode($auto);
+                $archivo = 'auto.json';
+
+                file_put_contents($archivo, $autoJson);
+            
+                return $auto;
+			}
+			return null;
+		}
     }
 
 ?>

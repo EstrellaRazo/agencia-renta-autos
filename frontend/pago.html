@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Pago - Auto Aventura 🛣️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="caja">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+                <!-- Container wrapper -->
+                <div class="container-fluid">
+            
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                    <img
+                        src="../images/logo.png"
+                        height="120"
+                        alt="Auto Aventura Logo"
+                        loading="lazy"
+                    />
+                    </a>
+                    <!-- Links de la izquierda -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="autos.html">Renta un auto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de nosotros</a>
+                    </li>
+                    </ul>
+                    <!-- fin de links izquierda -->
+                </div>
+                <!-- Collapsible wrapper -->
+                <!-- Botones de la derecha -->
+                <div class="d-flex align-items-center">
+                    <div class="paginas">
+                    <ul>
+                        <a href="inicio-sesion.html" data-mdb-ripple-init type="button" class="btn btn-outline-success me-2">
+                            Iniciar sesión
+                        </a>
+                        <a href="registrarse.html" data-mdb-ripple-init type="button" class="btn btn-primary me-3">
+                            Registrarse
+                        </a>
+                    </ul>
+                    </div>
+                </div>
+                <!-- Right elements -->
+                </div>
+                <!-- Container wrapper -->
+            </nav>
+            <!-- Navbar -->
+        </div>
+    </header>
+    <div class="titulo-principal titulo-pago">Pago</div>
+    <section class="section-pago d-flex flex-wrap align-items-center">
+        <div class="card recibo-pago d-flex flex-wrap align-items-center" style="width: 40%;">
+            <img src="../autos/kia-rio.jpg" id="img-auto-pago" class="img-auto-pago card-img-top" alt=""/>
+            <div class="card-body">
+                <h5 class="card-title" id="pago-marca">Marca</h5> 
+                <h5 class="card-title" id="pago-modelo">Modelo</h5> 
+                <span class="card-text">Fecha renta:</span>
+                <span class="fecha-renta card-text" id="pago-fecha-renta">Fecha renta</span>
+                <p type="hidden"></p>
+                <span class="card-text">Fecha devolución:</span>
+                <span class="fecha-devolucion card-text" id="pago-fecha-devolucion">Fecha devolución</span>
+                <p type="hidden"></p>
+                <span class="card-text">Total:</span>
+                <span class="costo fecha-devolucion card-text" id="pago-costo">costo</span>
+                <p>-------------------------------------------------------</p>
+                <p class="p-datos-pago">Datos de pago</p>
+                <form class="datos-pago" id="formPago" method="POST" action="../backend/pago.php">
+                    <input type="hidden" name="accion" value="agregar">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="nombre" required>
+                    <p type="hidden"></p>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" class="fecha" required>
+                    <p type="hidden"></p>
+                    <label for="metodo">Método de pago:</label>
+                    <input type="text" id="metodo" name="metodo" class="metodo" required>
+                    <p type="hidden"></p>
+                
+                    <div class="center">
+                        <button type="submit" class="btn btn-success hacer-pago" data-mdb-ripple-init>Pagar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="./js/pago.js"></script>
+</body>
+</html>

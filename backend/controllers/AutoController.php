@@ -41,44 +41,16 @@
 			}
 		}
 
-		/*public function borrarUsuario($id) {
-			$resultado = $this->userService->borrarUsuario($id);
+		
+		public function obtenerAutoporId($id) {
+			$resultado = $this->autoService->obtenerAutoPorId($id);
+
 			if($resultado){
-				echo json_encode(array("success" => true, "message" => "Usuario eliminado correctamente"));
+				echo json_encode(array("success" => true, "autos" => $resultado));
 			}
 			else{
-				echo json_encode(array("success" => false, "message" => "Error al borrar usuario"));
+				echo json_encode(array("success" => false, "message" => "Error al encontrar auto"));
 			}
 		}
-
-		public function obtenerUsuarioporId($id) {
-			$resultado = $this->userService->obtenerUsuarioPorId($id);
-			if($resultado){
-				echo json_encode(array("success" => true, "users" => $resultado));
-			}
-			else{
-				echo json_encode(array("success" => false, "message" => "Error al actualizar usuario"));
-			}
-		}
-
-		public function actualizarUsuario ($id) {
-			$nombre = $_POST['nombre'];
-			$apaterno = $_POST['apaterno'];
-			$amaterno = $_POST['amaterno'];
-			$direccion = $_POST['direccion'];
-			$telefono = $_POST['telefono'];
-			$correo = $_POST['correo'];
-			$usuario = $_POST['usuario'];
-			$password = $_POST['password'];
-
-			$usuarioNuevo = new User($nombre, $apaterno, $amaterno, $direccion, $telefono, $correo, $usuario, $password);
-			$resultado = $this->userService->actualizarUsuario($id, $usuarioNuevo);
-
-			if ($resultado) {
-				echo json_encode(array("success" => true, "message" => "Usuario Actualizado Satisfactoriamente"));
-			} else {
-				echo json_encode(array("success" => false, "message" => "Error al Actualizar Usuario"));
-			}
-		}*/
 	}
 ?>

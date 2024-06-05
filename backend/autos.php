@@ -8,12 +8,14 @@
 			$accion = $_POST['accion'];
 			if ($accion == 'agregar') {
 				$autoController->agregar();
-            }
+            } else if ($accion == 'obtener') {
+				$id = $_POST['id'];
+				$autoController->obtenerAutoPorId($id);
+			}
 		break;
 		case 'GET':
 			$accion = $_GET['accion'];
 			if($accion == "todos"){
-				$id = $_GET['id'];
 				$autoController->obtenerTodosAutos();
 			}
 		break;

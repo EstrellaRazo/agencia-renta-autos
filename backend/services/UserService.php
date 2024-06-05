@@ -37,10 +37,15 @@
 
 			if ($result->num_rows == 1) {
 				$usuario = $result->fetch_assoc(); //Guardamos los datos del usuario en una variable
+				$usuarioJson = json_encode($usuario);
+				$archivo = 'usuario.json';
+				file_put_contents($archivo, $usuarioJson);
+
 				//Verificamos que la contraseña sea correcta
 				if (password_verify($contrasena, $usuario['contrasena'])) {
 					return $usuario;
 				}
+
 			}
 			return false;
 		}

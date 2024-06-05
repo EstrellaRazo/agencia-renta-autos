@@ -177,34 +177,6 @@ footer{
 }
 
 /*CSS para autos*/
-.elige-fechas{
-    margin-top: 30px;
-    margin-bottom: 0px;
-}
-
-.fechas-section{
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.renta{
-    padding: 10px;
-}
-
-.fecha{
-    margin: 10px;
-}
-
-.fecha-label{
-    margin: 0 0 0 10px;
-}
-
-.btn-fechas{
-    margin: 10px;
-    background-color: #E76849 !important;
-}
-
 .elige-auto{
     margin: 30px 0 0 0;
 }
@@ -278,7 +250,6 @@ footer{
 
 /*fin de estilos del modal*/
 
-
 .section-cards{
     margin: 1rem;
     display: flex;
@@ -286,7 +257,7 @@ footer{
     gap: 1rem; /* Espacio entre las tarjetas */
 }
 
-.card{
+.card-auto{
     border-radius: 30px;
     margin: 1rem !important;
     padding: 0.5rem;
@@ -316,3 +287,81 @@ footer{
     width: 250px !important;
 }
 
+.elige-fechas{
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.fechas-section{
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.container-fechas{
+    margin-bottom: 1rem !important;
+}
+
+.renta{
+    padding: 10px;
+}
+
+.fecha{
+    margin: 10px;
+}
+
+.fecha-label{
+    margin: 0 0 0 10px;
+}
+
+.btn-fechas{
+    margin: 10px;
+    background-color: #E76849 !important;
+}
+
+.boton-pagar{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.btnPagar{
+    background-color: #F3B0AC !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border: none !important;
+    width: 250px !important;
+}
+
+/*CSS para pago*/
+.titulo-pago{
+    margin-top: 1.5rem;
+}
+
+.section-pago{
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.p-datos-pago{
+    text-align: center;
+}
+
+.datos-pago label,
+.datos-pago input{
+    margin: 5px 0 0 0;
+}
+.datos-pago input{
+    margin: 0 0 0 3px;
+}
+
+.nombre{
+    width: 78%;
+}
+
+.center{
+    text-align: center;
+}
+
+.hacer-pago{
+    background-color: #79A690 !important;
+}

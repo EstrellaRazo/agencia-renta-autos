@@ -65,39 +65,7 @@
             <!-- Navbar -->
         </div>
     </header>
-    <div class="elige-fechas">
-        <h1 class="titulo-principal">Selecciona las fechas de tu renta</h1>
-    </div>
-    <section class="fechas-section d-flex">
-        <div class="mask d-flex align-items-center justify-content-center h-100 gradient-custom-3">
-            <div class="container  h-100">
-                <div class="card">
-                    <form class="renta" id="renta" method="POST" action="../backend/index.php">
-                    <input type="hidden" name="accion" value="registrar">
-                        <div class="fecha d-flex align-items-center">
-                            <label class=" form-label me-2" for="fechaRecoleccion">Recolección:</label>
-                            <input 
-                                type="date" 
-                                id="fechaRecoleccion" 
-                                name="fechaRecoleccion" 
-                                required 
-                                class="form-control form-control-lg" 
-                                min="2024-05-30" 
-                                max="2100-12-31"/><label class="fecha-label form-label me-2" for="fechaDevolucion">Devolución:</label>
-                            <input 
-                                type="date" 
-                                id="fechaDevolucion" 
-                                name="fechaDevolucion" 
-                                required 
-                                class="form-control form-control-lg" 
-                                min="2024-05-30" 
-                                max="2100-12-31"/><button type="submit" class="btn-fechas btn btn-danger btn-rounded" data-mdb-ripple-init >Establecer fechas</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <div class="elige-auto">
         <h1 class="titulo-principal">Elige tu auto</h1>
         <div class="nuevo-auto">
@@ -110,7 +78,7 @@
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
             <h2>Añadir nuevo auto</h2>
-            <form id="form-auto">
+            <form id="form-auto" method="POST" action="../backend/autos.php">
             <input type="hidden" name="accion" value="agregar">
                 <div class="lbl-auto">
                     <label for="url">Url imagen:</label>
@@ -138,8 +106,14 @@
     </div>
 
     <div id="section-cards" class="section-cards d-flex flex-wrap align-items-center">
+        <form id="idForm" method="POST" style="display: none;" action="../backend/autos.php">
+            <input type="hidden" name="accion" value="obtener">
+            <input type="hidden" name="id" id="id">
+        </form>
+
+
         <template id="card" class=" d-flex justify-content-center">
-            <div class="card" style="width: 29%;">
+            <div class="card card-auto" style="width: 29%;">
                 <img src="" class="img-auto card-img-top" alt=""/>
                 <div class="card-body">
                     <h5 class="marca card-title">Marca</h5>
@@ -163,11 +137,49 @@
                     </span><li class="precio list-group-item">Precio día</li><span>/día</span>
                 </ul>
                 <div class="card-body d-flex justify-content-center">
-                    <button type="button" class="btnPago btn btn-elegir" data-mdb-ripple-init>Proceder al pago</button>
+                    <button type="button" class="btn btn-elegir" data-mdb-ripple-init>Elegir auto</button>
                 </div>
             </div>
         </template>
     </div>
+
+    <div class="elige-fechas">
+        <h1 class="titulo-principal">Selecciona las fechas de tu renta</h1>
+    </div>
+    <section class="fechas-section d-flex">
+        <div class="mask d-flex align-items-center justify-content-center h-100 gradient-custom-3">
+            <div class="container container-fechas h-100">
+                <div class="card">
+                    <form class="renta" id="formRenta" method="POST" action="../backend/renta.php">
+                        <input type="hidden" name="accion" value="agregar">
+                        <div class="fecha d-flex align-items-center">
+                            <label class=" form-label me-2" for="fechaRecoleccion">Recolección:</label>
+                            <input 
+                                type="date" 
+                                id="fechaRecoleccion" 
+                                name="fechaRecoleccion" 
+                                required 
+                                class="form-control form-control-lg" 
+                                min="2024-05-30" 
+                                max="2100-12-31"/><label class="fecha-label form-label me-2" for="fechaDevolucion">Devolución:</label>
+                            <input 
+                                type="date" 
+                                id="fechaDevolucion" 
+                                name="fechaDevolucion" 
+                                required 
+                                class="form-control form-control-lg" 
+                                min="2024-05-30" 
+                                max="2100-12-31"/><button type="submit" class="btn-fechas btn btn-danger btn-rounded" data-mdb-ripple-init >Establecer fechas</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="boton-pagar">
+        <button type="button" class="btnPagar btn" onclick="window.location.href = 'pago.html'" data-mdb-ripple-init>Ir a pagar</button>
+    </div>
     <script src="./js/autos.js"></script>
+    <script src="./js/renta.js"></script>
 </body>
 </html>
