@@ -90,7 +90,7 @@ main{
 }
 
 .banner{
-    width: 30%;
+    width: 50%;
     display: block;
     margin: auto;
     padding-bottom: 20px;
@@ -155,7 +155,7 @@ main{
 
 
 .contenido{
-    padding: 3em 0;
+    padding: 1.5em 0;
     background: linear-gradient(#EFC3B8, #E76849);
 }
 
@@ -167,10 +167,14 @@ main{
 
 .video .titulo-principal{
     font-size: 30px;
-    color: rgba(255, 255, 255, 0.795);
-    margin-top: 35px;
+    color: rgb(255, 255, 255);
+    font-weight: bold !important;
+    margin-top: 10px !important;
 }
 
+.playlist{
+    font-size: 1.2em !important;
+}
 
 footer{
     text-align: center;
