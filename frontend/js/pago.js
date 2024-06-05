@@ -75,7 +75,7 @@ if (formPago) {
         console.log('@@ res => ', res)
         if (res.message === 'Pago Agregado Satisfactoriamente') {
           window.location.href = '../frontend/index.html'
-          alert('Tu pago se realizó corectamente. \n¡Disruta tu viaje!')
+          alert('Tu pago se realizó corectamente. \n¡Disfruta tu viaje!')
         }
       })
       .catch((err) => {
